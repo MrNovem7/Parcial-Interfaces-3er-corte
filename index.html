@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favico.ico">
+    <link rel="stylesheet" href="style.css">
+    <title>NeonMix DJ - Interfaz Virtual 3D</title>
+</head>
+<body>
+    <nav id="menu">
+        <img class="logo-cat" src="assets/djcat.jpg" alt="">
+        <input type="checkbox" name="menuham" id="menu-ham">
+        <label class="icono-menu" for="menu-ham">
+            <img src="assets/hamburger-menu.svg" alt="">
+        </label>
+        
+        <ul class="menuham">
+            <li>
+                <button class="sec-btn">Tutorial</button>
+            </li>
+            <li>
+                <button class="sec-btn">Efectos</button>
+            </li>
+            <li>
+                <audio id="clickSound" src="assets/Remember Summer Days - ANRI.mp3" preload="auto"></audio>
+                <audio id="hoverSound" src="assets/Hide - Dorian Concept (Slowed x Reverb)  BEST background song for gaming - MTRangeVR.mp3" preload="auto"></audio>
+                <button class="btn"
+                    onmouseenter="document.getElementById('hoverSound').play()"
+                    onclick="document.getElementById('clickSound').play()"   
+                    onclick="document.getElementById('hoverSound').stop()">   
+                    Comenzar Mix
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <header id="banner">
+        <div class="izq-banner">
+            <h1>SWEET BEATS</h1>
+            <p>Platos, ecualizadores y efectos todo esto y mas en un entorno interactivo y llamativo.</p>
+            <button class="btn">Probar ahora</button>
+            <div class="audio-controls">
+                <button id="play-btn">▶️</button>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.7">
+            </div>
+        </div>
+    </header>
+    <!-- Vista de Interfaz 3D -->
+    <spline-viewer class="nice" url="https://prod.spline.design/HsPWk8fQ2ogVPjb1/scene.splinecode"></spline-viewer>
+
+    <section id="sc1">
+        <div class="izq-sc1">
+            <h2>Controles interactivos en 3D</h2>
+            <p>Manipula platos virtuales, sliders de mezcla y efectos especiales con una interfaz intuitiva diseñada para músicos digitales.</p>
+            <ul class="features">
+                <li>✔️ 3 canales de ecualización</li>
+                <li>✔️ Efectos: Delay, Reverb, Flanger</li>
+                <li>✔️ Visualización de ondas de audio</li>
+            </ul>          
+        </div>
+        <div class="der-sc1">
+            <img src="assets/mesa de mix.jpg" alt="Previsualización de controles DJ">
+        </div>
+    </section>
+
+    <section id="sc2">
+        <!-- <div class="izq-sc2">
+            <canvas id="audio-visualizer"></canvas>
+        </div> -->
+        <div class="der-sc2">            
+            <h2>Visualización de audio en tiempo real</h2>
+            <p>Observa cómo tus mezclas cobran vida con espectrogramas y partículas que reaccionan al ritmo.</p>
+            <div class="eq-controls">
+                <label>Bajos <input type="range" class="eq-slider" data-band="bass"></label>
+                <label>Medios <input type="range" class="eq-slider" data-band="mid"></label>
+                <label>Agudos <input type="range" class="eq-slider" data-band="treble"></label>
+            </div>
+        </div>
+    </section>
+
+    <footer id="pie">
+        <div class="izq-pie">
+            <h3>NeonMix DJ</h3>
+            <p>Una experiencia de mezcla musical inmersiva en 3D.</p>
+            <p>Proyecto académico - Diseño de Interfaces Multimedia</p>
+        </div>
+        <div class="der-pie">
+            <article>
+                <h3>Controles</h3>
+                <p>Platos</p>
+                <p>Mezclador</p>
+                <p>Efectos</p>
+            </article>
+
+            <article>
+                <h3>Recursos</h3>
+                <p>Tutoriales</p>
+                <p>Samples</p>
+                <p>Playlists</p>
+            </article>
+
+            <article>
+                <h3>Compartir</h3>
+                <p>Exportar mix</p>
+                <p>Grabar sesión</p>
+            </article>
+        </div>
+    </footer>
+
+    <!-- Slider funcional -->
+    <div class="eq-container">
+        <h3>Visualizador de Audio</h3>
+        <div class="eq-bars">
+            <!-- Barra de Bajos -->
+            <div class="eq-bar bass">
+                <div class="eq-level"></div>
+                <span>Bajos</span>
+            </div>
+            <!-- Barra de Medios -->
+            <div class="eq-bar mid">
+                <div class="eq-level"></div>
+                <span>Medios</span>
+            </div>
+            <!-- Barra de Agudos -->
+            <div class="eq-bar treble">
+                <div class="eq-level"></div>
+                <span>Agudos</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de interfaz 3D -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.98/build/spline-viewer.js"></script>
+
+    <!-- <script src="dj-interaction.js"></script> -->
+</body>
+</html>
